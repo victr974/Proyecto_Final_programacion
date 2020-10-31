@@ -1,0 +1,3 @@
+Indicaciones:
+-Para la conexion a base de datos se debe crear una carpeta en el disco c el cual tiene por nombre restaurant que contiene el db_propetis.pros
+-En la carpeta Dase de datos de restaurant va la importacion De la base de datos.
