@@ -73,6 +73,11 @@ public class Mesa extends javax.swing.JInternalFrame {
         jLabel9 = new javax.swing.JLabel();
         txtDisponible = new javax.swing.JTextField();
 
+        setClosable(true);
+        setIconifiable(true);
+        setMaximizable(true);
+        setResizable(true);
+
         tblCargar.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null},
@@ -265,6 +270,7 @@ public class Mesa extends javax.swing.JInternalFrame {
         txtIDempleado.setText(null);
         txtIDMenu.setText(null);
         txtIDCATEGORIA.setText(null);
+        txtDisponible.setText(null);
     }
 
     
@@ -355,27 +361,28 @@ public class Mesa extends javax.swing.JInternalFrame {
         try {
             conn = conectar.getConection();
             ps = conn.prepareCall("call ModidcarPedido (?,?,?,?,?,?,?,?)");
-            ps.setInt(1, codigo);
-            ps.setInt(2, mesa);
-            ps.setInt(3, id_cliente);
-            ps.setInt(4, id);
-            ps.setInt(5, id_menu);
-            ps.setInt(6, id_categoria);
-            ps.setInt(7, Disponible );
-            ps.setInt(8, id_mesa );
+            ps.setInt(1, id_mesa );
+            ps.setInt(2, codigo);
+            ps.setInt(3, mesa);
+            ps.setInt(4, id_cliente);
+            ps.setInt(5, id);
+            ps.setInt(6, id_menu);
+            ps.setInt(7, id_categoria);
+            ps.setInt(8, Disponible );
+            ps.setInt(9, id_mesa );
             
             
             int res = ps.executeUpdate();
             if(res >0)
             {
-                JOptionPane.showMessageDialog(null," Registro Guardado" );
+                JOptionPane.showMessageDialog(null," Registro modificado" );
                  LimpiarCajas();
                 cargarTabla();
              
             }
 
             else {
-                JOptionPane.showMessageDialog(null, "Error al guardar registro");
+                JOptionPane.showMessageDialog(null, "Error al modificar");
                 LimpiarCajas();
             }
             conn.close();
