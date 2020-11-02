@@ -19,7 +19,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author Victor Cortez
  */
-public class Cliente extends javax.swing.JInternalFrame {
+public class IngresoCliente extends javax.swing.JInternalFrame {
 
     Conexion_BD conectar = new Conexion_BD();
     Connection conn;
@@ -34,7 +34,7 @@ public class Cliente extends javax.swing.JInternalFrame {
      * Creates new form Cliente
      * @throws java.sql.SQLException
      */
-    public Cliente() throws SQLException {
+    public IngresoCliente() throws SQLException {
         initComponents();
         conn = conectar.getConection();
          cargar("");
@@ -288,7 +288,7 @@ public class Cliente extends javax.swing.JInternalFrame {
               }
               tblCliente.setModel(model);
         } catch (SQLException ex) {
-            Logger.getLogger(Cliente.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(IngresoCliente.class.getName()).log(Level.SEVERE, null, ex);
         }
     
      }
@@ -314,7 +314,7 @@ public class Cliente extends javax.swing.JInternalFrame {
             int res = ps.executeUpdate();
             if(res>0)
             {
-                JOptionPane.showMessageDialog(null," Registro Guardada" );
+                JOptionPane.showMessageDialog(null,"Registro Guardada" );
                  LimpiarCajas();
                  cargar("");
             }

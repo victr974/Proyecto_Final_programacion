@@ -208,9 +208,9 @@ public class MenuPrinpal extends javax.swing.JFrame {
 
     private void jM_EmpleadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jM_EmpleadosActionPerformed
        
-        Empleados emp;
+        IngresoEmpleado emp;
         try {
-            emp = new Empleados();
+            emp = new IngresoEmpleado();
             DesktopPane.add(emp);
             emp.show();
             emp.setLocation(50,2);
@@ -234,7 +234,7 @@ public class MenuPrinpal extends javax.swing.JFrame {
    
     private void jM_ClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jM_ClientesActionPerformed
         try {
-            Cliente cli = new Cliente();
+            IngresoCliente cli = new IngresoCliente();
             DesktopPane.add(cli);
             cli.show();
             cli.setLocation(50,2);
