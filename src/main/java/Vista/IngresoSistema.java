@@ -131,10 +131,11 @@ public class IngresoSistema extends javax.swing.JFrame {
         String password=new String(txtcontra.getPassword());
         if(usuario.equals("") && password.equals(""))
         {
-            this.setVisible(false);
-            JOptionPane.showMessageDialog(null, "Bienvenido al sistema restaurante");
-            MenuPrinpal entry = new MenuPrinpal();
-            entry.setVisible(true);
+        this.setVisible(false);
+        JOptionPane.showMessageDialog(null, "Bienvenido");
+        MenuPrinpal ingreso = new MenuPrinpal();
+        ingreso.setVisible(true);
+        ingreso.pack();
         }
         else
         {
