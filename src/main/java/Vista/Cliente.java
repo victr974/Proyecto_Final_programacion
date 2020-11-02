@@ -2,7 +2,9 @@
 package Vista;
 
 import com.mycompany.restaurat.Conexion_BD;
+import java.sql.CallableStatement;
 import com.mysql.cj.jdbc.result.ResultSetMetaData;
+import java.awt.HeadlessException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -21,7 +23,7 @@ public class Cliente extends javax.swing.JInternalFrame {
 
     Conexion_BD conectar = new Conexion_BD();
     Connection conn;
-    PreparedStatement ps;
+    CallableStatement ps;
     ResultSet rs;
     ResultSetMetaData rsmd;
     int columnas;
@@ -115,29 +117,29 @@ public class Cliente extends javax.swing.JInternalFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnGuardar)
-                    .addComponent(btnEliminar))
-                .addGap(25, 25, 25)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnGuardar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnModificar, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addGap(35, 35, 35))
+                    .addComponent(btnModificar)
+                    .addComponent(btnEliminar))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(23, 23, 23)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnModificar, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
+                    .addComponent(btnGuardar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnGuardar)
-                    .addComponent(btnModificar))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnEliminar)
-                    .addComponent(jButton1))
-                .addContainerGap())
+                    .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jLabel2.setText("Nombre:");
@@ -186,7 +188,7 @@ public class Cliente extends javax.swing.JInternalFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel2)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel7)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -194,8 +196,7 @@ public class Cliente extends javax.swing.JInternalFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtTelefono)))
-                .addGap(133, 133, 133))
+                        .addComponent(txtTelefono))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -240,25 +241,24 @@ public class Cliente extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(28, 28, 28)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(29, 29, 29)
+                        .addGap(23, 23, 23)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(67, 67, 67)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(81, 81, 81)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(67, 67, 67)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(19, 19, 19))
         );
@@ -269,9 +269,9 @@ public class Cliente extends javax.swing.JInternalFrame {
 
     
     void cargar(String valor){
-    String mostrar="SELECT * FROM cliente WHERE CONCAT (codigoCliente,nombre,nit,telefono,correo) LIKE '%"+valor+"%'";
+    String mostrar="SELECT * FROM cliente WHERE CONCAT(codigoCliente,nombre,nit,telefono,correo) LIKE '%"+valor+"%'";
     String []titulos={"Codigo","Nombre","Nit","Telefono","Correo"};
-    String []Registros=new String[6];
+    String []Registros=new String[5];
     model= new DefaultTableModel(null,titulos);
   
         try {
@@ -284,7 +284,6 @@ public class Cliente extends javax.swing.JInternalFrame {
                   Registros[2]= rs.getString("nit");
                   Registros[3]= rs.getString("telefono");
                   Registros[4]= rs.getString("correo");
-     
                   model.addRow(Registros);
               }
               tblCliente.setModel(model);
@@ -293,28 +292,23 @@ public class Cliente extends javax.swing.JInternalFrame {
         }
     
      }
-    
-    
-    
-    
-    
-    
+
     
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
             
             String codigoCliente = txtCodigo.getText();
             String nombre = txtNombre.getText();
             String nit =  txtNit.getText();
-            String telefono =  txtTelefono.getText();
+            int telefono =  Integer.parseInt(txtTelefono.getText());
             String correo = txtCorreo.getText();
             
         try {
             conn = conectar.getConection();
-            ps= conn.prepareStatement("INSERT INTO cliente ( codigoCliente, nombre, nit, telefono, correo )VALUES(?,?,?,?,?)");
+            ps = conn.prepareCall(" call insertCliente(?,?,?,?,?)");
             ps.setString(1, codigoCliente);
             ps.setString(2,nombre);
             ps.setString(3, nit);
-            ps.setString(4, telefono);
+            ps.setInt(4, telefono);
             ps.setString(5, correo);
             
             int res = ps.executeUpdate();
@@ -322,7 +316,7 @@ public class Cliente extends javax.swing.JInternalFrame {
             {
                 JOptionPane.showMessageDialog(null," Registro Guardada" );
                  LimpiarCajas();
-                 cargarTabla();
+                 cargar("");
             }
             else {
                 JOptionPane.showMessageDialog(null, "Error al guardar registro");
@@ -335,26 +329,27 @@ public class Cliente extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
-       int id_cliente = Integer.parseInt(txtId.getText());
-        int codigo = Integer.parseInt(txtCodigo.getText());
-        String nombre = txtNombre.getText();
-        int id_menu = Integer.parseInt(txtIdMenu.getText());
-        int activo = Integer.parseInt(txtEsta.getText());
+            String codigoCliente = txtCodigo.getText();
+            String nombre = txtNombre.getText();
+            String nit =  txtNit.getText();
+            int telefono =  Integer.parseInt(txtTelefono.getText());
+            String correo = txtCorreo.getText();
         
         try {
             conn = conectar.getConection();
-            ps = conn.prepareCall("call modificar_cliente (?,?,?,?,?)");
-            ps.setInt(1, codigo);
+            ps = conn.prepareCall("call modificaCliente (?,?,?,?,?)");
+            ps.setString(1, codigoCliente);
             ps.setString(2, nombre);
-            ps.setInt(3, id_menu);
-            ps.setInt(4, activo);
-            ps.setInt(5, id_cliente);
+            ps.setString(3, nit);
+            ps.setInt(4, telefono);
+            ps.setString(5, correo);
             
             int res = ps.executeUpdate();
             if(res >0)
             {
                 JOptionPane.showMessageDialog(null, "Registro modificado");
                  LimpiarCajas();
+                 cargar("");
             }
              else {
                 JOptionPane.showMessageDialog(null, "Error al modificar registro");
@@ -369,12 +364,12 @@ public class Cliente extends javax.swing.JInternalFrame {
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
         
-        int codigo = Integer.parseInt(txtCodigo.getText());
+        String codigoCliente = txtCodigo.getText();
         
         try {
             conn = conectar.getConection();
-            ps = conn.prepareCall("call eliminar_cliente(?)");
-            ps.setInt(1, codigo);
+            ps = conn.prepareCall("call eliminarCliente(?)");
+            ps.setString(1, codigoCliente);
             
             int res = ps.executeUpdate();
             if(res >0)
@@ -401,24 +396,24 @@ public class Cliente extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void tbnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbnBuscarActionPerformed
-        int codigo  = Integer.parseInt(txtCodigo.getText());
+        String codigoCliente  = txtCodigo.getText();
 
         try {
             conn = conectar.getConection();
-            ps = conn.prepareCall("call buscar_cliente (?)");
-            ps.setInt(1, codigo);
+            ps = conn.prepareCall("call buscarCliente(?)");
+            ps.setString(1, codigoCliente);
 
             rs = ps.executeQuery();
             if(rs.next())
             {
-                txtId.setText(rs.getString("id_cliente"));
-                txtCodigo.setText(rs.getString("codigo"));
+                txtCodigo.setText(rs.getString("codigoCliente"));
                 txtNombre.setText(rs.getString("nombre"));
-                txtIdMenu.setText(rs.getString("id_menu"));
-                txtEsta.setText(rs.getString("activo"));
+                txtNit.setText(rs.getString("nit"));
+                txtTelefono.setText(rs.getString("telefono"));
+                txtCorreo.setText(rs.getString("correo"));
             }
             else{
-                JOptionPane.showMessageDialog(null, "No esiste un registro con este Id");
+                JOptionPane.showMessageDialog(null, "No esiste un registro");
                 LimpiarCajas();
             }
         } catch (Exception e) {
