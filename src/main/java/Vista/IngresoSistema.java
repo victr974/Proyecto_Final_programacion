@@ -133,9 +133,9 @@ public class IngresoSistema extends javax.swing.JFrame {
         {
         this.setVisible(false);
         JOptionPane.showMessageDialog(null, "Bienvenido");
-        //MenuPrinpal ingreso = new MenuPrinpal();
-       // ingreso.setVisible(true);
-        //ingreso.pack();
+        formPrincipal ingreso = new formPrincipal();
+        ingreso.setVisible(true);
+        ingreso.pack();
         }
         else
         {
